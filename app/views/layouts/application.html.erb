@@ -28,7 +28,9 @@
     <li><a href="mailto:piotr.pszczola@o2.pl">Email</a></li>
   </ul>
 
-  <p class="sign_in">Admin Login</p>
+  <% if !user_signed_in? %>
+    <p class="sign_in">Admin Login</p>
+  <% end %>
 </div>
 
 <div id="main_content">
@@ -43,8 +45,10 @@
   <% end %>
 
     <div class="buttons">
+    <% if user_signed_in? %>
       <button class="button"><%= link_to "New Post", new_post_path %></button>
       <button class="button">Log Out</button>
+    <% end %>
   </div>
 </div>
 
